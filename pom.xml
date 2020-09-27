@@ -14,10 +14,16 @@
       <version>4.8.2</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+</dependency>
+</dependencies>
 <profiles>
 <profile>
-<id>qa</id>
-<build>
+<id>Prod</id>                                                                                                                                                           <build>
 <plugins>
 <plugin>
     <groupId>org.apache.tomcat.maven</groupId>
@@ -26,20 +32,12 @@
     <configuration>
         <url>http://13.58.133.34:8080/manager/text</url>
         <server>TomcatServer</server>
-        <path>/qa</path>
-    </configuration>
+        <path>/prod</path>                                                                                                                                                  </configuration>
 </plugin>
 </plugins>
 </build>
 </profile>
 </profiles>
-    <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>servlet-api</artifactId>
-    <version>2.5</version>
-</dependency>
-</dependencies>
 <distributionManagement>
   <repository>
     <id>releases</id>
